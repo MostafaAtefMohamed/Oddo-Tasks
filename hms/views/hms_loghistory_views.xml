@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id="loghistory_tree_view" model="ir.ui.view">
+        <field name="name">loghistory tree view</field>
+        <field name="model">hms.loghistory</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="create_uid"/>
+                <field name="create_date"/>
+                <field name="description"/>
+                <field name="patient_id"/>
+            </tree>
+        </field>
+    </record>
+                    <record id="loghistory_form_view" model="ir.ui.view">
+        <field name="name">loghistory form view</field>
+        <field name="model">hms.loghistory</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="date"/>
+                <field name="description"/>
+            </form>
+        </field>
+    </record>
+
+
+        <record id="action_loghistory" model="ir.actions.act_window">
+            <field name="name">loghistory</field>
+            <field name="res_model">hms.loghistory</field>
+        </record>
+
+        <menuitem id="hms_loghistory" name="loghistory" parent="hms_root"  action="action_loghistory"></menuitem>
+    </data>
+</odoo>

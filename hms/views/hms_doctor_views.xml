@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="doctor_tree_view" model="ir.ui.view">
+        <field name="name">doctor tree view</field>
+        <field name="model">hms.doctor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="FirstName"/>
+                <field name="LastName"/>
+                <field name="image"/>
+            </tree>
+        </field>
+    </record>
+              <record id="doctor_form_view" model="ir.ui.view">
+        <field name="name">doctor form view</field>
+        <field name="model">hms.doctor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                            <field name="FirstName"/>
+                            <field name="LastName"/>
+                            <field name="image" widget="image"/>
+                     </group>
+                </sheet>
+
+
+            </form>
+        </field>
+    </record>
+
+
+        <record id="action_doctor" model="ir.actions.act_window">
+            <field name="name">doctor</field>
+            <field name="res_model">hms.doctor</field>
+        </record>
+
+        <menuitem id="hms_doctor" name="doctor" parent="hms_root"  action="action_doctor"></menuitem>
+    </data>
+</odoo>
